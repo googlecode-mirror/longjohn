@@ -3,7 +3,7 @@
 	<div class="title">
 		<h2>music</h2>
 	</div>
-</div>
+</div><br>
 <a href=addplaylist.php>make your list</a> | 
 <a href=editmusic.php>add tunes to your lists</a><br><br>
 <?php

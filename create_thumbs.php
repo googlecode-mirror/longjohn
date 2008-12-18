@@ -41,9 +41,12 @@ function createGallery( $pathToImages, $pathToThumbs, $galleryPage )
 {
   echo "Creating gallery.html <br />";
 
-  $output = "<?require_once 'header.php';?>";
+  $output = "<?require_once 'header.php';?><div class='post'>
+	<div class='title'>
+		<h2>photos</h2>
+	</div></div><br>";
   
-  $output .= "<table cellspacing=\"0\" cellpadding=\"2\" width=\"500\">";
+  $output .= "<table cellspacing=\"0\" cellpadding=\"2\" width=\"600\">";
   $output .= "<tr>";
 
   // open the directory
@@ -69,7 +72,7 @@ function createGallery( $pathToImages, $pathToThumbs, $galleryPage )
 
   $output .= "</tr>";
   $output .= "</table>";
-  $output .= "<<?require_once 'footer.php';?>";
+  $output .= "<?require_once 'footer.php';?>";
   
 
   // open the file

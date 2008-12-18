@@ -19,7 +19,7 @@
 		<div id="menu">
 			<ul>
 				<li><a href="gallery.php">photos</a></li>
-				<li><a href="movieFind.php">Movies</a></li>
+				<li><a href="moviefind.php">Movies</a></li>
 				<li><a href="musicfind.php">Music</a></li>
 				<li><a href="musicAdmin/admin.php">Admin</a></li>
 			</ul>
