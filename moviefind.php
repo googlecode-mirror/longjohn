@@ -23,7 +23,7 @@ if(!isset($cmd))
    $result = mysql_query("SELECT * FROM titles WHERE titles.name LIKE '%".$_POST['search1']."%'AND 
    titles.catagory LIKE'".$_POST['category']."'order by titles.name");
 $counter = 0;
-echo "<table width=600 border = 1>";
+echo "<table width=600 border = 0>";
 echo "<tr>";
    while($row=mysql_fetch_array($result))
    {

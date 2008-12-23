@@ -6,10 +6,11 @@
 						<li>
 							<h2>Links</h2>
 							<ul>
-								<li><a href="http://mail.yahoo.com"></a>yahoo mail</li>
-								<li><a href="http://www.ebay.com">ebay</a></li>
+								<li><a href="http://mail.yahoo.com">yahoo mail</a></li>
 							</ul>
-
+							<ul>
+								<li><a href="http://www.hulu.com/">hulu</a></li>
+							</ul>
 						</li>
 					</ul>
 				</div>
