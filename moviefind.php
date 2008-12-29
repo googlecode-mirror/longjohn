@@ -33,9 +33,7 @@ echo "<tr>";
 		echo "<a href='divx.php?play=$movName' title=$movName>";
 		echo "<img src='pics/$movName.jpg'>"; 
 		echo "<br>";
-		echo substr($movName,0,10);
-		echo "...";
-		
+		echo substr($movName,0,15);
 		echo "</a>";
 		echo "</td>";
 		
