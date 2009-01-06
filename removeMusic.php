@@ -9,7 +9,7 @@
 if($_GET["cmd"]=="delete")
 {
 	$id = $_GET["id"];
-    $sql = "DELETE FROM music WHERE music.id=$id and music.category !='Master LIST' ";
+    $sql = "DELETE FROM music WHERE music.id=$id and music.category !='All' ";
     $result = mysql_query($sql);
     echo "<table align=center>";
 					echo "<tr>";
