@@ -3,10 +3,10 @@
 	<div class="title">
 		<h2>pick some tunes</h2>
 	</div>
-</div>
+</div>test this start
    	<?php
 	echo "<form action='editmusic.php' method='post'>";
-	echo "Folder:  <input type='text' name='search2' value=''>";
+	echo "Folder:  <input type='text' name='search2'  value=''>";
 	echo "playlists: <select name='playlists'>";
 	while($row = mysql_fetch_assoc($sql_result))
           {
@@ -14,7 +14,7 @@
           }
 	echo "</select>";
 	
-	$sql_result = mysql_query("SELECT * FROM playlists WHERE playlists.name != 'Master LIST' ORDER BY id");
+	$sql_result = mysql_query("SELECT * FROM playlists WHERE playlists.name != 'All' ORDER BY id");
 	echo "<form action='editmusic.php' method='post' >";
 	echo "to:<select name='playlists2'>";
 	while($row2 = mysql_fetch_assoc($sql_result))
@@ -28,8 +28,8 @@
 
 <iframe
 name="iframe"
-width="750"
-height="30"
+width="600"
+height="25"
 src="editmusic.php"
 frameborder="0"
 scrolling="no" >
