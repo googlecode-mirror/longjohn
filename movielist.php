@@ -25,7 +25,7 @@ if(!isset($cmd))
    $result = mysql_query("SELECT * FROM titles WHERE titles.name LIKE '%".$_POST['search1']."%'AND 
    titles.catagory LIKE'".$_POST['Category']."'order by titles.name");
 
-echo "<table>";
+echo "<table border=1>";
    while($row=mysql_fetch_array($result))
    {
    $movID=$row['0'];
