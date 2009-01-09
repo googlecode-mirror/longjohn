@@ -1,34 +1,58 @@
 <?require_once "header.php";?>
-<div class="post">
-	<div class="title">
-		<h2>pick some tunes</h2>
+<div id="sidebar">
+		<ul>
+			<li>
+				<h2><strong>search</strong> music</h2>
+				<ul>
+				   	<?php
+					echo "<form action='editmusic.php' method='post'>";
+					//echo "Folder:<br><input type='text' name='search2' value=''>";
+					echo "Folder:<br><select name='search2'>";
+								$sqlCat = mysql_query("SELECT SUM(id) as ID, SUBSTRING(music.artist,1,25) as artist FROM Music GROUP BY music.artist ORDER BY artist");
+							echo "<option>%</option>";
+							 while($row = mysql_fetch_assoc($sqlCat))
+						      {
+						      echo "<option>$row[artist]</option>";
+						      }
+							echo "</select><br>";
+					echo "<br>move from playlists:<br><select name='playlists'>";
+					while($row = mysql_fetch_assoc($sql_result))
+				          {
+				          echo "<option>$row[name]</option>";
+				          }
+					echo "</select>";
+					
+					$sql_result = mysql_query("SELECT * FROM playlists WHERE playlists.name != 'All' ORDER BY id");
+					echo "<form action='editmusic.php' method='post'>";
+					echo "to:<select name='playlists2'>";
+					while($row2 = mysql_fetch_assoc($sql_result))
+						{
+						echo "<option>$row2[name]</option>";
+						}
+					echo "</select>";
+					echo "<br><input name=sea type='submit' value='go'/>";
+					echo "</form>";
+					?>
+				</ul>
+			</li>
+			<li>
+				<h2><strong>manage</strong> music</h2>
+				<ul>
+					<li><a href=editmusic.php>add tunes to your lists</a></li>
+					<li><a href=addplaylist.php>make a playlist</a></li>
+				</ul>
+			</li>
+		</ul>
 	</div>
-</div>test this start
-   	<?php
-	echo "<form action='editmusic.php' method='post'>";
-	echo "Folder:  <input type='text' name='search2'  value=''>";
-	echo "playlists: <select name='playlists'>";
-	while($row = mysql_fetch_assoc($sql_result))
-          {
-          echo "<option>$row[name]</option>";
-          }
-	echo "</select>";
-	
-	$sql_result = mysql_query("SELECT * FROM playlists WHERE playlists.name != 'All' ORDER BY id");
-	echo "<form action='editmusic.php' method='post' >";
-	echo "to:<select name='playlists2'>";
-	while($row2 = mysql_fetch_assoc($sql_result))
-		{
-		echo "<option>$row2[name]</option>";
-		}
-	echo "</select>";
-	echo "<input name=sea type='submit' value='go' />";
-	echo "</form>";
-	?>
+<div id="content">
+		<div class="post">
+			<h1 class="title"><?echo $_POST['search2'];?></h1>
+			<div class="entry">
+				<p>
 
-<iframe
+<iframe 
 name="iframe"
-width="600"
+width="550"
 height="25"
 src="editmusic.php"
 frameborder="0"

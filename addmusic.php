@@ -1,7 +1,7 @@
 <?require_once "header.php";?>
 
 <?php
-$it = new RecursiveDirectoryIterator("E:\mp3s");
+$it = new RecursiveDirectoryIterator("mp3s");
 foreach(new RecursiveIteratorIterator($it) as $file) {
 	$name = $file->getFilename();
 	$name = htmlspecialchars($name,ENT_QUOTES);
@@ -10,7 +10,8 @@ foreach(new RecursiveIteratorIterator($it) as $file) {
 	$lastfolder=end($folderarray);
 	$folder=prev($folderarray);
 	$path=str_replace("\\","/",$file);
-	$path=substr($path,3);
+	//uncomment the next line if you pass an absolute path to the Iteratoy, you will need to give apache access to the root of that directory if you use this
+	//$path=substr($path,3);
 	$sql="SELECT id FROM music WHERE music.category ='All' AND music.path = '".$path."'";	
 	$res = mysql_query($sql) or die ("SQL failed");
 	
@@ -19,7 +20,7 @@ foreach(new RecursiveIteratorIterator($it) as $file) {
 		}
 	else {
 		mysql_query("INSERT INTO music(name,path,category,artist) VALUES('".$name."','".$path."','All','".$folder."')");
-		echo "ADDED".$name."<br>";
+		echo "ADDED ".$name."<br>";
 		//If the file is not in the database add it to the database
 	}
 }

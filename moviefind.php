@@ -1,22 +1,39 @@
 <?require_once "header.php";?>
-<div class="post">
-	<div class="title">
-		<h2>movies</h2>
+<div id="sidebar">
+		<ul>
+			<li>
+				<h2><strong>search</strong> movies</h2>
+				<ul>
+					<?php
+				        $sql_result = mysql_query("SELECT * FROM category where category.name != 'Exclusions'");  
+				        echo "<form action='moviefind.php' method='post' >";
+						echo "Name:<br><input type='text' name='search1' value=''/>";
+						echo "<br>Category:<br><select name='category'>";
+						 while($row = mysql_fetch_assoc($sql_result))
+				          {
+				          echo "<option>$row[name]</option>";
+				          }
+						echo "</select>";
+						echo "<input type='submit' value='go' />";
+					echo "</form>";
+					 ?>
+				</ul>
+			</li>
+			<li>
+				<h2><strong>manage</strong> movies</h2>
+				<ul>
+					<li><a href=movielist.php>categorize movies</a></li>
+					<li><a href=moviereindex.php>find new movies</a></li>
+					<li><a href=addcategory.php>create category</a></li>
+				</ul>
+			</li>
+		</ul>
 	</div>
-</div><br>
-	<?php
-        $sql_result = mysql_query("SELECT * FROM category where category.name != 'Exclusions'");  
-        echo "<form action='moviefind.php' method='post' >";
-		echo "Name:<input type='text' name='search1' value=''/>";
-		echo "Category:  <select name='category'>";
-		 while($row = mysql_fetch_assoc($sql_result))
-          {
-          echo "<option>$row[name]</option>";
-          }
-		echo "</select>";
-		echo "<input type='submit' value='go' />";
-	echo "</form>";
-	 ?>
+<div id="content">
+		<div class="post">
+			<h1 class="title"><?echo $_POST['category'];?></h1>
+			<div class="entry">
+				<p>
 <?php
 if(!isset($cmd))
 {
