@@ -1,57 +1,81 @@
 <?require_once "header.php";?>
-<div class="post">
-	<div class="title">
-		<h2>music</h2>
+	<div id="sidebar">
+		<ul>
+			<li>
+				<h2><strong>search</strong> music</h2>
+				<ul>
+						<?php
+						    echo "<form action='musicfind.php' method='post'>";
+							echo "Song:<br><input type='text' name='search1' value=''><br>";
+							echo "Folder:<br><select name='search2'>";
+								$sqlCat = mysql_query("SELECT SUM(id) as ID, SUBSTRING(music.artist,1,25) as artist FROM Music GROUP BY music.artist ORDER BY artist");
+							echo "<option>%</option>";
+							 while($row = mysql_fetch_assoc($sqlCat))
+						      {
+						      echo "<option>$row[artist]</option>";
+						      }
+							echo "</select><br>";
+							echo "Playlist:<br><select name='category'>";
+							while($row = mysql_fetch_assoc($sql_result))
+						      {
+						      echo "<option>$row[name]</option>";
+						      }
+							echo "</select><br>";
+							echo "<input type='submit' name='go' value='go' />";
+							echo "</form>";
+						?>
+				</ul>
+			</li>
+			<li>
+				<h2><strong>manage</strong> music</h2>
+				<ul>
+					<li><a href=editmusic.php>add tunes to your lists</a></li>
+					<li><a href=addplaylist.php>make a playlist</a></li>
+				</ul>
+			</li>
+		</ul>
 	</div>
-</div><br>
-<a href=addplaylist.php>make your list</a> | 
-<a href=editmusic.php>add tunes to your lists</a><br><br>
-<?php
-    echo "<form action='musicfind.php' method='post'>";
-	echo "Song:<input type='text' name='search1' value=''>";
-	echo "Folder:<input type='text' name='search2' value=''>";
-	echo "Playlist:<select name='category'>";
-	 while($row = mysql_fetch_assoc($sql_result))
-      {
-      echo "<option>$row[name]</option>";
-      }
-	echo "</select>";
-	echo "<input type='submit' name='go' value='go' />";
-	echo "</form>";
-?>
+<div id="content">
+		<div class="post">
+			<h1 class="title"><?echo $_POST['search2'];?></h1>
+			<div class="entry">
+				<p>
+					<?php
+					if (!isset($_POST['go'])) {
 
-<?php
-if (!isset($_POST['go'])) {
+												}
+					else{
+						$result = mysql_query("
+						SELECT * FROM music 
+						WHERE music.name LIKE '%".$_POST['search1']."%'
+						AND music.category LIKE'%".$_POST['category']."%' 
+						AND music.path LIKE '%".$_POST['search2']."%'  
+						AND music.id > 2 
+						order by music.artist, music.name
+						");
+						
+						//echo "<table>";
+						while($row=mysql_fetch_array($result))
+						{
+							$cat=$_POST['category'];
+							$sea=$_POST['search1'];
+							$fold=$_POST['search2'];
+							//echo "<tr>";
+					    	//echo "<td>";	
+					    	echo "<a href='musicPlay.php?cmd=play&sea=".$row['name']."&cat=".$row['category']."&folder=".$row['path']."'>play </a>";
+							echo $row['name']. "<br>";
+							//echo "</td>";
+							//echo "<td>";
+							//echo $row['artist'];
+							//echo "</td>";
+					    	//echo "</tr>";
+					    }
+					//echo "</table>";
+					echo "<a href='musicPlay.php?cmd=play&sea=$sea&cat=$cat&folder=$fold'>Play all</a>";
+					}
+					?>
+				</p>
+			
 
-							}
-else{
-	$result = mysql_query("
-	SELECT * FROM music 
-	WHERE music.name LIKE '%".$_POST['search1']."%'
-	AND music.category LIKE'%".$_POST['category']."%' 
-	AND music.path LIKE '%".$_POST['search2']."%'  
-	AND music.id > 2 
-	order by music.artist, music.name
-	");
 	
-	echo "<table>";
-	while($row=mysql_fetch_array($result))
-	{
-		$cat=$_POST['category'];
-		$sea=$_POST['search1'];
-		$fold=$_POST['search2'];
-		echo "<tr>";
-    	echo "<td>";	
-    	echo "<a href='musicPlay.php?cmd=play&sea=".$row['name']."&cat=".$row['category']."&folder=".$row['path']."'>play </a>";
-		echo $row['name']. "<br>";
-		echo "</td>";
-		echo "<td>";
-		echo $row['artist'];
-		echo "</td>";
-    	echo "</tr>";
-    }
-echo "</table>";
-echo "<a href='musicPlay.php?cmd=play&sea=$sea&cat=$cat&folder=$fold'>Play all</a>";
-}
-?>
 <?require_once "footer.php";?>
