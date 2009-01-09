@@ -95,7 +95,7 @@ img.right {
 
 #header {
 	width: 900px;
-	height: 145px;
+	height: 88px;
 	margin: 0px auto;
 	text-transform: lowercase;
 	color: #FFFFFF;
@@ -104,8 +104,8 @@ img.right {
 #header h1 {
 	float: left;
 	margin: 0px;
-	padding: 70px 0px 0px 25px;
-	font-size: 40px;
+	padding: 95px 0px 0px 25px;
+	font-size: 14px;
 }
 
 #header h1 sup {
@@ -116,7 +116,7 @@ img.right {
 	float: right;
 	margin: 0px;
 	padding: 95px 25px 0px 0px;
-	font-size: 14px;
+	font-size: 12px;
 }
 
 #header a {
@@ -126,11 +126,11 @@ img.right {
 
 /* Header2 */
 
-#header2 {
+/*#header {
 	width: 900px;
 	height: 88px;
 	margin: 0px auto;
-}
+}*/
 
 /* Menu */
 

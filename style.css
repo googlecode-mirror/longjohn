@@ -88,9 +88,9 @@ input, textarea, select {
 
 /* Header */
 
-#header {
+#header{
 	width: 850px;
-	height: 82px;
+	height: 50px;
 	margin: 0 auto 40px auto;
 	background: url(images/img03.gif) repeat-x left bottom;
 }
@@ -100,7 +100,7 @@ input, textarea, select {
 }
 
 #logo h1 {
-	font-size: 38px;
+	font-size: 18px;
 	color: #494949;
 }
 

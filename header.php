@@ -16,18 +16,11 @@
 </head>
 <body>
 <!-- start header -->
-<div id="bg1">
-	<div id="header">
-		<h1><a href="#">Long John<sup></sup></a></h1>
-		<h2>web media server</h2>
-	</div>
-</div>
 <div id="bg2">
-	<!--<div id="header">-->
-	<div id="header2">
+	<div id="header">
 		<div id="logo">
-			<!--<h1><a href="#">Long John<sup></sup></a></h1>-->
-			<!--<h2>web media server</h2>-->
+			<h1><a href="#">Long John<sup></sup></a></h1>
+			<h2>web media server</h2>
 		</div>
 		
 		<div id="menu">
