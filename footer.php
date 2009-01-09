@@ -1,9 +1,12 @@
 	
 				
+					</div>
+				</div>
+			</div>
+			<div style="clear: both;">&nbsp;</div>
 			</div>
 		</div>
 	</div>
-	<div style="clear: both;">&nbsp;</div>
 </div>
 <!-- end page -->
 <!-- start footer -->
