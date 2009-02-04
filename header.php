@@ -6,7 +6,7 @@
 <title>LongJohn by kevin</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
-<link href="styleW.css" rel="stylesheet" type="text/css" />
+<link href="style.css" rel="stylesheet" type="text/css" />
 <?php
 	$database=movies;
 	$databasehost=mysql_connect("localhost","root","")or die("not connect".mysql_error());

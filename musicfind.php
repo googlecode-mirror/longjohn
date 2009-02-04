@@ -49,7 +49,7 @@
 						SELECT * FROM music 
 						WHERE music.name LIKE '%".$_POST['search1']."%'
 						AND music.category LIKE'%".$_POST['category']."%' 
-						AND music.path LIKE '%".$_POST['search2']."%'  
+						AND music.artist LIKE '".$_POST['search2']."%'  
 						AND music.id > 2 
 						order by music.artist, music.name
 						");

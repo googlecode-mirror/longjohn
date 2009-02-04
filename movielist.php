@@ -40,14 +40,15 @@
 					   $result = mysql_query("SELECT * FROM titles WHERE titles.name LIKE '%".$_POST['search1']."%'AND 
 					   titles.catagory LIKE'".$_POST['Category']."'order by titles.name");
 
-					echo "<table border=0>";
+					echo "<table border=1>";
 					   while($row=mysql_fetch_array($result))
 					   {
 					   $movID=$row['0'];
+					   
 						    echo "<tr>";
 					        echo "<td align=left><a href='divx.php?play=".$row['name']."'>Play</a> - ";
-							echo $row['name']. "<br>";
-							echo $row['catagory']. "<br>";
+							echo $row['name']. "-";
+							echo $row['catagory'];
 							$sql_result = mysql_query("SELECT * FROM category");
 							echo "<form action='movieList.php' method='post' >";
 							echo "<select name='Category2'>";
@@ -59,11 +60,12 @@
 							echo "</select>";
 							echo "<input type='hidden' name=movID value=".$row['0'].">";
 							echo "<input type='hidden' name=Update value='update'>";
-							echo " <input type='submit' value='set' ><br>";
-							echo "<a href='movieList.php?cmd=delete&id=$movID'>Delete</a><br>";
+							echo " <input type='submit' value='set' >";
+							echo "<a href='movieList.php?cmd=delete&id=$movID'>Delete</a>";
+							
+							echo "<img src=pics/".$row['name'].'.jpg'.">
+							<a href=http://images.google.com/images?q=".preg_replace('/(\w+)([A-Z])/U', '\\1%20\\2', $row['name']).">find image</a>" ;
 							echo "</td>";
-							echo "<td align=center> <img src=pics/".$row['name'].'.jpg'."><br>
-							<a href=http://images.google.com/images?q=".$row['name'].">find image</a> </td> " ;
 						    echo "</tr>";
 					     }
 					echo "</table>";
