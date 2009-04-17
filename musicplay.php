@@ -4,7 +4,7 @@ $database=movies;
 		mysql_select_db($database) or die( "Unable to select database");
 
 $result2 = mysql_query("SELECT * FROM music WHERE music.name LIKE '%".$_GET['sea']."%'AND 
-   music.category LIKE'".$_GET['cat']."' AND music.path LIKE '%".$_GET['folder']."%' AND  music.id > 2 order by music.name ");
+   music.category LIKE'".$_GET['cat']."' AND music.path LIKE '%".$_GET['folder']."%' AND  music.id > 2 order by music.artist, music.name ");
 
 header("content-type: audio/x-mpegurl");
 ?>
