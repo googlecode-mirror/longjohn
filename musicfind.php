@@ -8,13 +8,17 @@
 						    echo "<form action='musicfind.php' method='post'>";
 							echo "Song:<br><input type='text' name='search1' value=''><br>";
 							echo "Folder:<br><select name='search2'>";
-								$sqlCat = mysql_query("SELECT SUM(id) as ID, SUBSTRING(music.artist,1,25) as artist FROM Music GROUP BY music.artist ORDER BY artist");
+								$sqlCat = mysql_query("SELECT SUM(id) as ID, music.artist as artist FROM Music GROUP BY music.artist ORDER BY artist");
 							echo "<option>%</option>";
 							 while($row = mysql_fetch_assoc($sqlCat))
 						      {
-						      echo "<option>$row[artist]</option>";
-						      }
+						      echo "<option>";
+						      $artName=$row[artist];
+						      echo substr($artName,0,25);
+						      echo "</option>";
+						        }
 							echo "</select><br>";
+							echo "<input type='hidden' name='title' value='$row[artist]'>";
 							echo "Playlist:<br><select name='category'>";
 							while($row = mysql_fetch_assoc($sql_result))
 						      {
@@ -37,13 +41,18 @@
 	</div>
 <div id="content">
 		<div class="post">
-			<h1 class="title"><?echo $_POST['search2'];?></h1>
+			<h1 class="title"><? 
+								if ($_POST['search2'] == null) { echo "Music";}
+								if ($_POST['search2'] == "%") { echo "All";}
+								else {echo $_POST['search2'];}
+								?>
+			</h1>
 			<div class="entry">
 				<p>
 					<?php
 					if (!isset($_POST['go'])) {
 
-												}
+											  }
 					else{
 						$result = mysql_query("
 						SELECT * FROM music 
@@ -54,28 +63,16 @@
 						order by music.artist, music.name
 						");
 						
-						//echo "<table>";
 						while($row=mysql_fetch_array($result))
 						{
 							$cat=$_POST['category'];
 							$sea=$_POST['search1'];
 							$fold=$_POST['search2'];
-							//echo "<tr>";
-					    	//echo "<td>";	
-					    	echo "<a href='musicPlay.php?cmd=play&sea=".$row['name']."&cat=".$row['category']."&folder=".$row['path']."'>play </a>";
+							echo "<a href='musicPlay.php?cmd=play&sea=".$row['name']."&cat=".$row['category']."&folder=".$row['path']."'>play </a>";
 							echo $row['name']. "<br>";
-							//echo "</td>";
-							//echo "<td>";
-							//echo $row['artist'];
-							//echo "</td>";
-					    	//echo "</tr>";
-					    }
-					//echo "</table>";
+						}
 					echo "<a href='musicPlay.php?cmd=play&sea=$sea&cat=$cat&folder=$fold'>Play all</a>";
 					}
 					?>
 				</p>
-			
-
-	
 <?require_once "footer.php";?>
