@@ -71,7 +71,7 @@
 							echo "<a href='musicPlay.php?cmd=play&sea=".$row['name']."&cat=".$row['category']."&folder=".$row['path']."'>play </a>";
 							echo $row['name']. "<br>";
 						}
-					echo "<a href='musicPlay.php?cmd=play&sea=$sea&cat=$cat&folder=$fold'>Play all</a>";
+					echo "<a href='musicplay.php?cmd=play&sea=$sea&cat=$cat&folder=$fold'>Play all</a>";
 					}
 					?>
 				</p>
