@@ -34,7 +34,7 @@
 						echo "<option>$row2[name]</option>";
 						}
 					echo "</select>";
-					echo "<br><input name=sea type='submit' value='go'/>";
+					echo "<br><input name=searh type='submit' value='go'/>";
 					echo "</form>";
 					?>
 				</ul>
@@ -65,7 +65,7 @@ scrolling="no" >
 
 
 <?php
-if (!isset($_POST['sea'])) {
+if (!isset($_POST['searh'])) {
 
 											  }
 					else{
@@ -79,7 +79,7 @@ if (!isset($_POST['sea'])) {
 	$sea=$_POST['search1'];
 	$fold=$_POST['search2'];
 	
-echo "<a href='musicPlay.php?cmd=play&sea=$sea&cat=$cat&folder=$fold'>Play All<br></a>";
+echo "<a href='musicplay.php?cmd=play&sea=$sea&cat=$cat&folder=$fold'>Play All<br></a>";
 echo "<form action='editmusic.php' method='post' >";
 	while($row=mysql_fetch_array($result))
 	{
