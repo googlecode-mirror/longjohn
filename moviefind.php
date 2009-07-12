@@ -31,7 +31,12 @@
 	</div>
 <div id="content">
 		<div class="post">
-			<h1 class="title"><?echo $_POST['category'];?></h1>
+			<h1 class="title"><?
+			     if ($_POST['category'] == null) { echo "movies";}
+				 if ($_POST['category'] == '%') { echo "All";}
+				 else {echo $_POST['category'];}
+				 ?>
+				 </h1>
 			<div class="entry">
 				<p>
 <?php
