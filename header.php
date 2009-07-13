@@ -1,18 +1,23 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
+<?php
+	$database=movies;
+	$databasehost=mysql_connect("localhost","root","")or die("not connect".mysql_error());
+	mysql_select_db($database) or die( "Unable to select database");
+	//$sql_result = mysql_query("SELECT * FROM playlists ORDER BY id ASC");
+	$Style_result = mysql_query("SELECT * FROM style WHERE active = 1");
+?>
+
+
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>LongJohn by kevin</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
-<link href="style.css" rel="stylesheet" type="text/css" />
-<?php
-	$database=movies;
-	$databasehost=mysql_connect("localhost","root","")or die("not connect".mysql_error());
-	mysql_select_db($database) or die( "Unable to select database");
-	$sql_result = mysql_query("SELECT * FROM playlists ORDER BY id ASC");
-?>
+<link href="<? while($row = mysql_fetch_assoc($Style_result)) { echo "$row[name]"; } ?>.css" rel="stylesheet" type="text/css" />
+
 </head>
 <body>
 <!-- start header -->
