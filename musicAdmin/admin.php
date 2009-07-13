@@ -4,7 +4,7 @@
 	$database=movies;
 	$databasehost=mysql_connect("localhost","root","")or die("not connect".mysql_error());
 	mysql_select_db($database) or die( "Unable to select database");
-	$sql_result = mysql_query("SELECT * FROM playlists");
+	
 ?>
 <link rel="stylesheet" type="text/css"
 href="../style.css" />
@@ -21,6 +21,7 @@ href="../style.css" />
 					<li><a href=../addpics.php>add pictures</a></li>
 					<li><a href=../create_thumbs.php>create thumbs</a></li>
 					<li><a href=../picfind.php>pic find</a><li>
+					<li><a href=../updatestyle.php>change style</a><li>
 				</ul>
 			</li>
 		</ul>
