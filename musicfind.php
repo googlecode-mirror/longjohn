@@ -5,6 +5,7 @@
 				<h2><strong>search</strong> music</h2>
 				<ul>
 						<?php
+						$sql_result = mysql_query("SELECT * FROM playlists ORDER BY id ASC");
 						    echo "<form action='musicfind.php' method='post'>";
 							echo "Song:<br><input type='text' name='search1' value=''><br>";
 							echo "Folder:<br><select name='search2'>";
