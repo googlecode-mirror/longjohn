@@ -33,7 +33,7 @@
 				<li><a href="gallery.php">photos</a></li>
 				<li><a href="moviefind.php">Movies</a></li>
 				<li><a href="musicfind.php">Music</a></li>
-				<li><a href="musicAdmin/admin.php">Admin</a></li>
+				<li><a href="admin.php">Admin</a></li>
 			</ul>
 		</div>
 		
