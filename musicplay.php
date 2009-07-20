@@ -12,10 +12,15 @@ $database=movies;
 		$result2 = mysql_query($sql);
 	//echo $sql;
 header("content-type: audio/x-mpegurl");
-?>
 
-<?php while($row = @mysql_fetch_array($result2)) { ?>
 
-http://208.53.58.134:8888/<?php echo $row['path']; ?><?php echo " \r\n"?>
-<?php }?>
+	while($row = @mysql_fetch_array($result2))
+	{
+	$path = $row['path'];
+    $path = str_replace(" ", "%20", $path);
+	?>http://192.168.25.87/LongJohn/<?php echo $path; ?><?php echo " \r\n"?><?php 
+	}
+ 
+ 
+ ?>
 
