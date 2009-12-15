@@ -85,6 +85,28 @@ function createGallery( $pathToImages, $pathToThumbs, $galleryPage )
 ?>
 <?require_once "header.php";?>
 <?php
+$dir = "pics";
+$it = new RecursiveDirectoryIterator($dir);
+
+
+foreach(new RecursiveIteratorIterator($it) as $file){
+
+	$folderarray=explode("\\",$file);
+	$lastfolder=end($folderarray);
+	$folder=prev($folderarray);
+	$path=str_replace("\\","/",$file);
+	//uncomment the next line if you pass an absolute path to the Iterator, you will need to give apache access to the root of that directory if you use this
+	//$path=substr($path,3);
+			
+	
+	
+		echo $folder;
+		echo "<br>";
+	
+		
+		
+	
+}
 	echo "<form action='create_thumbs.php' method='post'>";
 	echo "Gallery Directory:<input type='text' name='search1' value=''>";
 	echo "Gallery Name:<input type='text' name='gallery' value=''>";
