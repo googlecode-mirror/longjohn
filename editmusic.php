@@ -72,7 +72,7 @@ if (!isset($_POST['searh'])) {
 	$query = "SELECT * FROM music 
 	          WHERE music.name LIKE '%".$_POST['search1']."%'
 			  AND music.category LIKE 'ALL'
-			  AND music.artist LIKE '%".$_POST['search2']."%'
+			  AND music.artist LIKE '".$_POST['search2']."%'
 			  order by music.artist, music.name";
 	$result = mysql_query($query);
 	$cat=$_POST['category'];
