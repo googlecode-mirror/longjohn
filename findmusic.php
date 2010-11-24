@@ -6,7 +6,7 @@
 				<ul>
 						<?php
 						$sql_result = mysql_query("SELECT * FROM playlists ORDER BY id ASC");
-						    echo "<form action='musicfind.php' method='post'>";
+						    echo "<form action='findmusic.php' method='post'>";
 							echo "Song:<br><input type='text' name='search1' value=''><br>";
 							echo "Folder:<br><select name='search2'>";
 								$sqlCat = mysql_query("SELECT SUM(id) as ID, music.artist as artist FROM Music GROUP BY music.artist ORDER BY artist");
