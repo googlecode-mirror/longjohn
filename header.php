@@ -3,7 +3,7 @@
 <?php
 	$database=movies;
 	$con=mysql_connect('localhost','movie','qwerty')or die("not connect".mysql_error());
-	mysql_select_db("movies", $con) or die( "Unable to select database");
+	mysql_select_db("movies", $con) or die( "Unable to select database <a href='newdb.php'>Click here to create a new database.</a>");
 	$Style_result = mysql_query("SELECT * FROM style WHERE active = 1",$con);
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
