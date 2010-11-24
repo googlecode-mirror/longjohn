@@ -25,8 +25,8 @@
 		<div id="menu">
 			<ul>
 				<!--<li><a href="gallery.php">photos</a></li>-->
-				<li><a href="moviefind.php">Movies</a></li>
-				<li><a href="musicfind.php">Music</a></li>
+				<li><a href="findmovies.php">Movies</a></li>
+				<li><a href="findmusic.php">Music</a></li>
 				<li><a href="admin.php">Admin</a></li>
 			</ul>
 		</div>
