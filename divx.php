@@ -9,8 +9,8 @@
 			<li>
 				<h2><strong>manage</strong> movies</h2>
 				<ul>
-					<li><a href=movielist.php>categorize movies</a></li>
-					<li><a href=moviereindex.php>find new movies</a></li>
+					<li><a href=editmovies.php>categorize movies</a></li>
+					<li><a href=addmovies.php>find new movies</a></li>
 					<li><a href=addcategory.php>create category</a></li>
 				</ul>
 			</li>
