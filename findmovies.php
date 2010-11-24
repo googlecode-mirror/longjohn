@@ -6,7 +6,7 @@
 				<ul>
 					<?php
 				        $sql_result = mysql_query("SELECT * FROM category where category.name != 'Exclusions'");  
-				        echo "<form action='moviefind.php' method='post' >";
+				        echo "<form action='findmovies.php' method='post' >";
 						echo "Name:<br><input type='text' name='search1' value=''/>";
 						echo "<br>Category:<br><select name='category'>";
 						 while($row = mysql_fetch_assoc($sql_result))
@@ -23,7 +23,7 @@
 				<h2><strong>manage</strong> movies</h2>
 				<ul>
 					<li><a href=movielist.php>categorize movies</a></li>
-					<li><a href=moviereindex.php>find new movies</a></li>
+					<li><a href=addmovies.php>find new movies</a></li>
 					<li><a href=addcategory.php>create category</a></li>
 				</ul>
 			</li>
