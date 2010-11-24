@@ -14,7 +14,7 @@ while ($file = readdir($dh)) {
 										} 
 		else {
 			echo "$file has been added<br>";
-			$sql= "INSERT INTO titles (name) VALUES('".$file."')";
+			$sql= "INSERT INTO titles (name, category) VALUES('".$file."','')";
 			mysql_query($sql) or die("failed entry");
 			}
 	
