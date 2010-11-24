@@ -1,4 +1,4 @@
-<?require_once "header.php";?>
+<?php require_once "header.php";?>
 <div id="sidebar">
 		<ul>
 			<li>
@@ -32,4 +32,4 @@ echo"<embed type='video/divx' src='/DivX%20Movies/".$_GET['play'].".avi' width='
 echo "</embed>";
 echo "</object>";
 ?>
-<? require_once "footer.php";?>
+<?php require_once "footer.php";?>

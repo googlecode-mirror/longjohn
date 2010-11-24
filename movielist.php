@@ -1,4 +1,4 @@
-<?require_once "header.php";?>
+<?php require_once "header.php";?>
 <div id="sidebar">
 		<ul>
 			<li>
@@ -38,7 +38,7 @@
 					if(!isset($cmd))
 					{
 					   $result = mysql_query("SELECT * FROM titles WHERE titles.name LIKE '%".$_POST['search1']."%'AND 
-					   titles.catagory LIKE'".$_POST['Category']."'order by titles.name");
+					   titles.category LIKE'".$_POST['Category']."'order by titles.name");
 
 					echo "<table border=1>";
 					   while($row=mysql_fetch_array($result))
@@ -48,7 +48,7 @@
 						    echo "<tr>";
 					        echo "<td align=left><a href='divx.php?play=".$row['name']."'>Play</a> - ";
 							echo $row['name']. "-";
-							echo $row['catagory'];
+							echo $row['category'];
 							$sql_result = mysql_query("SELECT * FROM category");
 							echo "<form action='movieList.php' method='post' >";
 							echo "<select name='Category2'>";
@@ -83,8 +83,8 @@
 					{
 						$id2 = $_POST["movID"];
 						$cato = $_POST["Category2"];
-					    $sqlupdate = "UPDATE titles SET catagory ='$cato' WHERE id=$id2";
+					    $sqlupdate = "UPDATE titles SET category ='$cato' WHERE id=$id2";
 					    $result = mysql_query($sqlupdate);	 
 					}
 					?>
-<?require_once "footer.php";?>
+<?php require_once "footer.php";?>

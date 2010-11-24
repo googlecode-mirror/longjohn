@@ -83,7 +83,7 @@ function createGallery( $pathToImages, $pathToThumbs, $galleryPage )
   fclose( $fhandle );
 }
 ?>
-<?require_once "header.php";?>
+<?php require_once "header.php";?>
 <?php
 $dir = "pics";
 $it = new RecursiveDirectoryIterator($dir);

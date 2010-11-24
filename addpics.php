@@ -1,4 +1,4 @@
-<?require_once "header.php";?>
+<?php require_once "header.php";?>
 
 <?php
 
@@ -24,4 +24,4 @@ foreach(new RecursiveIteratorIterator($it) as $file) {
 }
 
 ?>
-<?require_once "footer.php";?>
+<?php require_once "footer.php";?>

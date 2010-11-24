@@ -1,4 +1,4 @@
-<?require_once "header.php";?>
+<?php require_once "header.php";?>
 <div id="sidebar">
 		<ul>
 			<li>
@@ -107,4 +107,4 @@ echo "<form action='editmusic.php' method='post' >";
 	 }
 	echo "</form>";
 ?>
-<? require_once "footer.php";?>
+<?php require_once "footer.php";?>

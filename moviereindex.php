@@ -1,4 +1,4 @@
-<?require_once "header.php";?>
+<?php require_once "header.php";?>
 
 <?php
 $dir = "DivX Movies";
@@ -21,4 +21,4 @@ while ($file = readdir($dh)) {
 }
 closedir($dh);
 ?>
-<?require_once "footer.php";?>
+<?php require_once "footer.php";?>

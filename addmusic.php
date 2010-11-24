@@ -1,4 +1,4 @@
-<?require_once "header.php";?>
+<?php require_once "header.php";?>
 
 <?php
 //replace mp3s with the path to your music folder, if your music folder is not in your htdocs, then pass in the absolute path.
@@ -26,4 +26,4 @@ foreach(new RecursiveIteratorIterator($it) as $file) {
 	}
 }
 ?>
-<? require_once "footer.php";?>
+<?php require_once "footer.php";?>

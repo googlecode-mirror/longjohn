@@ -1,4 +1,4 @@
-<?require_once "header.php";?>
+<?php require_once "header.php";?>
 	<?php
         $sql_result = mysql_query("SELECT * FROM piccategory");  
         echo "<form action='picfind.php' method='post' >";

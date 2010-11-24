@@ -1,4 +1,4 @@
-<?require_once "header.php";?>
+<?php require_once "header.php";?>
 	<table  align=center>
 		<td align=center>
 			<form ENCTYPE="multipart/form-data" ACTION="addpiccategory.php" METHOD="POST">
@@ -30,7 +30,7 @@ echo "<table align='center'>";
      }
 echo "</table>";
 ?>
-<?
+<?php
 if($_GET["cmd"]=="delete")
 {
 	$id = $_GET["id"];
@@ -41,5 +41,5 @@ if($_GET["cmd"]=="delete")
 
 }
 ?>
-<?require_once "footer.php";?>
+<?php require_once "footer.php";?>
 

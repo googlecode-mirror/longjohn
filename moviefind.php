@@ -1,4 +1,4 @@
-<?require_once "header.php";?>
+<?php require_once "header.php";?>
 <div id="sidebar">
 		<ul>
 			<li>
@@ -31,7 +31,7 @@
 	</div>
 <div id="content">
 		<div class="post">
-			<h1 class="title"><?
+			<h1 class="title"><?php
 			     if ($_POST['category'] == null) { echo "movies";}
 				 if ($_POST['category'] == '%') { echo "All";}
 				 else {echo $_POST['category'];}
@@ -43,7 +43,7 @@
 if(!isset($cmd))
 {
    $result = mysql_query("SELECT * FROM titles WHERE titles.name LIKE '%".$_POST['search1']."%'AND 
-   titles.catagory LIKE'".$_POST['category']."'order by titles.name");
+   titles.category LIKE'".$_POST['category']."'order by titles.name");
 $counter = 0;
 echo "<table width=600 border = 0>";
 echo "<tr>";
@@ -66,6 +66,6 @@ echo "</tr>";
 echo "</table>";
 }
 ?>
-<?require_once "footer.php";?>
+<?php require_once "footer.php";?>
 
 

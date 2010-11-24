@@ -1,4 +1,4 @@
-<?require_once "header.php";?>
+<?php require_once "header.php";?>
 
 
 <div id="sidebar">
@@ -25,4 +25,4 @@
 			<div class="entry">
 				<p>
 
-<? require_once "footer.php";?>
+<?php require_once "footer.php";?>

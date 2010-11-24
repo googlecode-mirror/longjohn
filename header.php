@@ -2,22 +2,17 @@
 
 <?php
 	$database=movies;
-	$databasehost=mysql_connect("localhost","root","")or die("not connect".mysql_error());
-	mysql_select_db($database) or die( "Unable to select database");
-	//$sql_result = mysql_query("SELECT * FROM playlists ORDER BY id ASC");
-	$Style_result = mysql_query("SELECT * FROM style WHERE active = 1");
+	$con=mysql_connect('localhost','movie','qwerty')or die("not connect".mysql_error());
+	mysql_select_db("movies", $con) or die( "Unable to select database");
+	$Style_result = mysql_query("SELECT * FROM style WHERE active = 1",$con);
 ?>
-
-
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>LongJohn by kevin</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
-<link href="<? while($row = mysql_fetch_assoc($Style_result)) { echo "$row[name]"; } ?>.css" rel="stylesheet" type="text/css" />
-
+<link href="<?php while($row = mysql_fetch_assoc($Style_result)) { echo "$row[name]"; } ?>.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <!-- start header -->
@@ -27,16 +22,14 @@
 			<h1><a href="#">Long John<sup></sup></a></h1>
 			<h2>web media server</h2>
 		</div>
-		
 		<div id="menu">
 			<ul>
-				<li><a href="gallery.php">photos</a></li>
+				<!--<li><a href="gallery.php">photos</a></li>-->
 				<li><a href="moviefind.php">Movies</a></li>
 				<li><a href="musicfind.php">Music</a></li>
 				<li><a href="admin.php">Admin</a></li>
 			</ul>
 		</div>
-		
 	</div>
 </div>
 <!-- end header -->
