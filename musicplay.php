@@ -18,7 +18,7 @@ header("content-type: audio/x-mpegurl");
 	{
 	$path = $row['path'];
     $path = str_replace(" ", "%20", $path);
-	?>http://192.168.25.122/LongJohn/<?php echo $path; ?><?php echo " \r\n"?><?php 
+	?>http://localhost/LongJohn/<?php echo $path; ?><?php echo " \r\n"?><?php 
 	}
  
  
