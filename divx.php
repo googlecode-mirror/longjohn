@@ -1,4 +1,4 @@
-<?php require_once "header.php";?>
+<?require_once "header.php";?>
 <div id="sidebar">
 		<ul>
 			<li>
@@ -9,8 +9,8 @@
 			<li>
 				<h2><strong>manage</strong> movies</h2>
 				<ul>
-					<li><a href=editmovies.php>categorize movies</a></li>
-					<li><a href=addmovies.php>find new movies</a></li>
+					<li><a href=movielist.php>categorize movies</a></li>
+					<li><a href=moviereindex.php>find new movies</a></li>
 					<li><a href=addcategory.php>create category</a></li>
 				</ul>
 			</li>
@@ -32,4 +32,4 @@ echo"<embed type='video/divx' src='/DivX%20Movies/".$_GET['play'].".avi' width='
 echo "</embed>";
 echo "</object>";
 ?>
-<?php require_once "footer.php";?>
+<? require_once "footer.php";?>

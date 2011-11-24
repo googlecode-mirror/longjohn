@@ -219,6 +219,11 @@ input, textarea, select {
 	display: none;
 }
 
+.resize {
+width: 100px;
+height : auto;
+}
+
 /* Sidebar */
 
 #sidebar {

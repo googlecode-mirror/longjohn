@@ -1,4 +1,4 @@
-<?php require_once "header.php";?>
+<?require_once "header.php";?>
 <div id="sidebar">
 		<ul>
 			<li>
@@ -38,7 +38,7 @@
 					if(!isset($cmd))
 					{
 					   $result = mysql_query("SELECT * FROM titles WHERE titles.name LIKE '%".$_POST['search1']."%'AND 
-					   titles.category LIKE'".$_POST['Category']."'order by titles.name");
+					   titles.catagory LIKE'".$_POST['Category']."'order by titles.name");
 
 					echo "<table border=1>";
 					   while($row=mysql_fetch_array($result))
@@ -48,23 +48,25 @@
 						    echo "<tr>";
 					        echo "<td align=left><a href='divx.php?play=".$row['name']."'>Play</a> - ";
 							echo $row['name']. "-";
-							echo $row['category'];
+							echo $row['catagory'];
 							$sql_result = mysql_query("SELECT * FROM category");
-							echo "<form action='movieList.php' method='post' >";
-							echo "<select name='Category2'>";
+							echo "<form action='movielist.php' method='post' >";
+							echo "<select name=selection>";
 							 while($row2 = mysql_fetch_assoc($sql_result))
 					          {
 					          echo "<option>$row2[name]</option>";
 					          }
-							echo "</form>";
+							
 							echo "</select>";
 							echo "<input type='hidden' name=movID value=".$row['0'].">";
+							
 							echo "<input type='hidden' name=Update value='update'>";
 							echo " <input type='submit' value='set' >";
 							echo "<a href='movieList.php?cmd=delete&id=$movID'>Delete</a>";
 							
 							echo "<img src=pics/".$row['name'].'.jpg'.">
 							<a href=http://images.google.com/images?q=".preg_replace('/(\w+)([A-Z])/U', '\\1%20\\2', $row['name']).">find image</a>" ;
+							echo "</form>";
 							echo "</td>";
 						    echo "</tr>";
 					     }
@@ -82,9 +84,10 @@
 					if($_POST["Update"]=="update")
 					{
 						$id2 = $_POST["movID"];
-						$cato = $_POST["Category2"];
-					    $sqlupdate = "UPDATE titles SET category ='$cato' WHERE id=$id2";
+						$cato = $_POST["selection"];
+					    $sqlupdate = "UPDATE titles SET catagory ='$cato' WHERE id=$id2";
 					    $result = mysql_query($sqlupdate);	 
 					}
+					echo $sqlupdate;
 					?>
-<?php require_once "footer.php";?>
+<?require_once "footer.php";?>

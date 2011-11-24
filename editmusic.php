@@ -1,4 +1,4 @@
-<?php require_once "header.php";?>
+<?require_once "header.php";?>
 <div id="sidebar">
 		<ul>
 			<li>
@@ -8,7 +8,7 @@
 					echo "<form action='editmusic.php' method='post'>";
 					//echo "Folder:<br><input type='text' name='search2' value=''>";
 					echo "Folder:<br><select name='search2'>";
-								$sqlCat = mysql_query("SELECT SUM(id) as ID, SUBSTRING(music.artist,1,25) as artist FROM Music GROUP BY music.artist ORDER BY artist");
+								$sqlCat = mysql_query("SELECT SUM(id) as ID, SUBSTRING(music.artist,1,25) as artist FROM Music WHERE music.path LIKE '%Music%' GROUP BY music.artist ORDER BY artist");
 							echo "<option> </option>";
 							echo "<option>%</option>";
 							 while($row = mysql_fetch_assoc($sqlCat))
@@ -72,7 +72,7 @@ if (!isset($_POST['searh'])) {
 	$query = "SELECT * FROM music 
 	          WHERE music.name LIKE '%".$_POST['search1']."%'
 			  AND music.category LIKE 'ALL'
-			  AND music.artist LIKE '".$_POST['search2']."%'
+			  AND music.artist LIKE '%".$_POST['search2']."%'
 			  order by music.artist, music.name";
 	$result = mysql_query($query);
 	$cat=$_POST['category'];
@@ -107,4 +107,4 @@ echo "<form action='editmusic.php' method='post' >";
 	 }
 	echo "</form>";
 ?>
-<?php require_once "footer.php";?>
+<? require_once "footer.php";?>

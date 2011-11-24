@@ -6,21 +6,17 @@ $database=movies;
 		$sql="SELECT * FROM music 
 		      WHERE music.name LIKE '%".$_GET['sea']."%'
 			  AND music.category LIKE '%".$_GET['cat']."%' 
-			  AND music.artist LIKE '".$_GET['folder']."%' 
-			  ORDER BY music.name";
+			  AND music.artist LIKE '%".$_GET['folder']."%' 
+			  order by music.artist, music.name";
 
 		$result2 = mysql_query($sql);
 	//echo $sql;
 header("content-type: audio/x-mpegurl");
+header("Content-Disposition: attachment; filename=playlist.m3u");
+?>
+#EXTM3U
+<?php while($row = @mysql_fetch_array($result2)) { ?>
 
-
-	while($row = @mysql_fetch_array($result2))
-	{
-	$path = $row['path'];
-    $path = str_replace(" ", "%20", $path);
-	?>http://localhost/LongJohn/<?php echo $path; ?><?php echo " \r\n"?><?php 
-	}
- 
- 
- ?>
+http://your server address<?php echo $row['path']; ?><?php echo " \r\n"?>
+<?php }?>
 

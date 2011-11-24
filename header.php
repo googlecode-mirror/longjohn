@@ -1,42 +1,45 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
 <?php
 	$database=movies;
-	$con=mysql_connect('localhost','movie','qwerty')or die("not connect".mysql_error());
-	mysql_select_db("movies", $con) or die( "Unable to select database <a href='newdb.php'>Click here to create a new database.</a>");
-	$Style_result = mysql_query("SELECT * FROM style WHERE active = 1",$con);
+	$databasehost=mysql_connect("localhost","root","")or die("not connect".mysql_error());
+	mysql_select_db($database) or die( "Unable to select database");
+	//$sql_result = mysql_query("SELECT * FROM playlists ORDER BY id ASC");
+	$Style_result = mysql_query("SELECT * FROM style WHERE active = 1");
 ?>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>LongJohn by kevin</title>
-<meta name="keywords" content="" />
-<meta name="description" content="" />
-<link href="<?php while($row = mysql_fetch_assoc($Style_result)) { echo "$row[name]"; } ?>.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
-<!-- start header -->
-<div id="bg2">
-	<div id="header">
-		<div id="logo">
-			<h1><a href="#">Long John<sup></sup></a></h1>
-			<h2>web media server</h2>
+	<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>LongJohn by kevin</title>
+
+<link rel="stylesheet" href="handheld.css" media="print" type="text/css" />
+<link rel="stylesheet" href="<? while($row = mysql_fetch_assoc($Style_result)) { echo "$row[name]"; } ?>.css" media="screen and (min-device-width: 481px)" type="text/css" />
+<link type="text/css" rel="stylesheet" media="only screen and (max-device-width: 480px)" href="handheld.css" />
+<!-- new androids -->
+<link rel="stylesheet" media="screen and (-webkit-device-pixel-ratio:0.75)" href="handheld.css" />
+<link rel="stylesheet" href="handheld.css" media="handheld" type="text/css" />
+<!--[if IE]>
+<link rel="stylesheet" href="style.css" media="screen" type="text/css" />
+<![endif]-->
+<!-- tell iPhone not to shrink mobile website -->
+<meta name="viewport" content="width=320; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+	</head>
+		<body>
+		<!-- start header -->
+		<div id="header">
+			<div id="logo">
+				<h1><a href="#">Long John<sup></sup></a></h1>
+				<h2>web media server</h2>
+			</div>
+			<div id="menu">
+				<ul>
+					<li><a href="moviefind.php">Movies</a></li>
+					<li><a href="musicfind.php">Music</a></li>
+					<li><a href="bookfind.php">Books</a></li>
+					<li><a href="admin.php">Admin</a></li>
+				</ul>
+			</div>
 		</div>
-		<div id="menu">
-			<ul>
-				<!--<li><a href="gallery.php">photos</a></li>-->
-				<li><a href="findmovies.php">Movies</a></li>
-				<li><a href="findmusic.php">Music</a></li>
-				<li><a href="admin.php">Admin</a></li>
-			</ul>
-		</div>
-	</div>
-</div>
-<!-- end header -->
-<!-- start page -->
-<div id="bg3">
-	<div id="bg4">
-		<div id="bg5">
-			<div id="page">
-	
-	
+		<!-- end header -->
+		<!-- start page -->
+		<div id="page">

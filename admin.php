@@ -1,4 +1,4 @@
-<?php require_once "header.php";?>
+<?require_once "header.php";?>
 
 
 <div id="sidebar">
@@ -7,8 +7,8 @@
 				<h2><strong>admin</strong> </h2>
 				<ul>
 					<li><a href=index.php>home</a></li>
-					<li><a href=editmovies.php>edit movies</a></li>
-					<li><a href=addmovies.php>add movies</a></li>
+					<li><a href=movieList.php>edit movies</a></li>
+					<li><a href=movieReIndex.php>add movies</a></li>
 					<li><a href=addmusic.php>add music</a></li>
 					<li><a href=cleanmusic.php>clean music</a></li>
 					<li><a href=addpics.php>add pictures</a></li>
@@ -25,4 +25,4 @@
 			<div class="entry">
 				<p>
 
-<?php require_once "footer.php";?>
+<? require_once "footer.php";?>

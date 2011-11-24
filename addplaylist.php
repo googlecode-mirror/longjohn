@@ -1,4 +1,4 @@
-<?php require_once "header.php";?>
+<?require_once "header.php";?>
 <div id="sidebar">
 		<ul>
 			<li>
@@ -56,4 +56,4 @@ if($_GET["cmd"]=="delete")
 
 }
 ?>
-<?php require_once "footer.php";?>
+<? require_once "footer.php";?>
