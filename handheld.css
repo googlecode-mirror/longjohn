@@ -9,7 +9,7 @@ body {
 	padding: 0;
 	background: #000000;
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-	font-size: 13px;
+	font-size: 24px;
 	color: #555555;
 }
 
@@ -128,6 +128,8 @@ img.right {
 /* Post */
 
 .post {
+	font-size: 24px;
+
 }
 
 .post .title {
@@ -138,6 +140,7 @@ img.right {
 }
 
 .post .entry {
+	font-size: 18px;
 }
 
 

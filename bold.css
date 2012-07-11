@@ -89,7 +89,7 @@ input, textarea, select {
 /* Header */
 
 #header {
-	width: 850px;
+	width: 90%;
 	height: 82px;
 	margin: 0 auto 40px auto;
 }
@@ -163,7 +163,7 @@ input, textarea, select {
 /* Page */
 
 #page {
-	width: 850px;
+	width: 85%;
 	margin: 0 auto;
 }
 
@@ -232,7 +232,7 @@ height : auto;
 
 #sidebar {
 	float: right;
-	width: 195px;
+	width: 300px;
 }
 
 #sidebar ul {

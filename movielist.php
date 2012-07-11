@@ -40,45 +40,58 @@
 					   $result = mysql_query("SELECT * FROM titles WHERE titles.name LIKE '%".$_POST['search1']."%'AND 
 					   titles.catagory LIKE'".$_POST['Category']."'order by titles.name");
 
+					$counter = 0;
 					echo "<table border=1>";
+					echo "<tr>";
 					   while($row=mysql_fetch_array($result))
 					   {
-					   $movID=$row['0'];
+					   $movID = $row['0'];
+					   $movieName = $row['1'];
+					   $movieCatagory = $row['3'];
 					   
-						    echo "<tr>";
-					        echo "<td align=left><a href='divx.php?play=".$row['name']."'>Play</a> - ";
-							echo $row['name']. "-";
-							echo $row['catagory'];
+						    
+					        echo "<td align=left>";
+							echo $movieName;
+							echo "&nbsp|&nbsp";
+							echo $movieCatagory;
+							echo "<br>";
+							echo "<a href='divx.php?play=$movieName' ><img src='pics/$movieName.jpg' class='resize'></a>";
+							echo "<br>";
+							echo "<a href=http://images.google.com/images?q=".preg_replace('/(\w+)([A-Z])/U', '\\1%20\\2', $movieName)."><img src='images/add16.png'></a>" ;
+							echo "&nbsp &nbsp";
+							echo "<a href='movieList.php?cmd=delete&id=$movID&name=$movieName'><img src='images/delete16.png'></a>";
 							$sql_result = mysql_query("SELECT * FROM category");
-							echo "<form action='movielist.php' method='post' >";
-							echo "<select name=selection>";
-							 while($row2 = mysql_fetch_assoc($sql_result))
-					          {
-					          echo "<option>$row2[name]</option>";
-					          }
-							
-							echo "</select>";
-							echo "<input type='hidden' name=movID value=".$row['0'].">";
-							
-							echo "<input type='hidden' name=Update value='update'>";
-							echo " <input type='submit' value='set' >";
-							echo "<a href='movieList.php?cmd=delete&id=$movID'>Delete</a>";
-							
-							echo "<img src=pics/".$row['name'].'.jpg'.">
-							<a href=http://images.google.com/images?q=".preg_replace('/(\w+)([A-Z])/U', '\\1%20\\2', $row['name']).">find image</a>" ;
-							echo "</form>";
+								echo "<form action='movielist.php' method='post' >";
+								echo "<select name=selection>";
+								while($row2 = mysql_fetch_assoc($sql_result))
+								{
+								echo "<option>$row2[name]</option>";
+								}
+								echo "</select>";
+								echo "<input type='hidden' name=movID value=".$movID.">";
+								echo "<input type='hidden' name=Update value='update'>";
+								echo " <input type='image' value='set' src='images/edit16.png'>";
+								echo "</form>";
 							echo "</td>";
+							$counter += 1;
+							if ( $counter % 2 == 0 ) { echo "</tr><tr>"; }
+							}
 						    echo "</tr>";
-					     }
+					     
 					echo "</table>";
 					}
 
 					if($_GET["cmd"]=="delete")
 					{
 						$id = $_GET["id"];
+						 chdir('DivX Movies');
+						$name = $_GET["name"].".avi";
+						unlink($name);
+						
 					    $sql = "DELETE FROM titles WHERE id=$id";
 					    $result = mysql_query($sql);
-					    echo "Row deleted!";    
+					    echo "Row deleted! <br>";    
+						echo $name;
 					}
 
 					if($_POST["Update"]=="update")

@@ -1,23 +1,19 @@
-/*
-Design by Free CSS Templates
-http://www.freecsstemplates.org
-Released for free under a Creative Commons Attribution 2.5 License
-*/
 
 body {
-	margin: 100px 0 0 0;
+	margin: 10px 0 0 0;
 	padding: 0;
-	background: #FFFFFF url(gray/img01.gif) repeat-x;
+	background: #000080 url(gray/snowman.png) no-repeat right bottom;
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	font-size: 13px;
 	color: #333333;
+	
 }
 
 h1, h2, h3 {
 	margin: 0;
 	text-transform: lowercase;
 	font-weight: normal;
-	color: #3E3E3E;
+	color: #FFFFFF;
 }
 
 h1 {
@@ -89,10 +85,11 @@ input, textarea, select {
 /* Header */
 
 #header{
-	width: 850px;
+	width: 80%;
 	height: 50px;
 	margin: 0 auto 40px auto;
-	background: url(gray/img03.gif) repeat-x left bottom;
+	background: #000080; 
+	
 }
 
 #logo {
@@ -142,12 +139,12 @@ input, textarea, select {
 #menu a {
 	display: block;
 	float: left;
-	background: #F5F5F5 url(gray/img02.gif) repeat-x left bottom;
+	background: #000080;
 	margin-left: 5px;
 	padding: 7px 20px;
 	text-decoration: none;
 	font-size: 13px;
-	color: #000000;
+	color: #00FFFF;
 }
 
 #menu a:hover {
@@ -169,6 +166,7 @@ input, textarea, select {
 #content {
 	float: left;
 	width: 560px;
+	min-height: 400px;
 }
 
 /* Post */
@@ -179,7 +177,7 @@ input, textarea, select {
 .post .title {
 	margin-bottom: 20px;
 	padding-bottom: 5px;
-	background: url(gray/img11.gif) no-repeat right 50%;
+	background: url(gray/snowflake.png) no-repeat right 50%;
 	border-bottom: 1px dotted #D1D1D1;
 }
 
@@ -251,27 +249,12 @@ height : auto;
 }
 
 #sidebar h2 {
-	margin-bottom: 10px;
-	background: url(gray/img11.gif) no-repeat right 50%;
+	margin-bottom: 16px;
+	background: url(gray/snowflake.png) no-repeat right 50%;
 	border-bottom: 1px dotted #D1D1D1;
 	font-size: 16px;
 }
 
-/* Search */
-
-#search {
-}
-
-#search h2 {
-	margin-bottom: 20px;
-}
-
-#s {
-	width: 120px;
-	margin-right: 5px;
-	padding: 3px;
-	border: 1px solid #F0F0F0;
-}
 
 #x {
 	padding: 3px;
@@ -282,41 +265,15 @@ height : auto;
 	color: #4F4F4F;
 }
 
-/* Boxes */
 
-.box1 {
-	padding: 20px;
-	background: url(gray/img05.gif) no-repeat;
-}
-
-.box2 {
-	color: #BABABA;
-}
-
-.box2 h2 {
-	margin-bottom: 15px;
-	background: url(gray/img10.gif) repeat-x left bottom;
-	font-size: 16px;
-	color: #FFFFFF;
-}
-
-.box2 ul {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-
-.box2 a:link, .box2 a:hover, .box2 a:active, .box2 a:visited  {
-	color: #EDEDED;
-}
 
 /* Footer */
 
 #footer {
-	height: 400px;
+	
 	min-height: 74px;
-	padding: 10px 0 0 0;
-	background: #003448 url(gray/img09.gif) repeat-x;
+	padding: 0 0 0 0;
+	
 }
 
 html>body #footer {

@@ -69,8 +69,10 @@
 							$cat=$_POST['category'];
 							$sea=$_POST['search1'];
 							$fold=$_POST['search2'];
+							$path = htmlspecialchars_decode($row['path'],ENT_QUOTES);
 							echo "<a href='musicplay.php?cmd=play&id=".$row['id']."'>play </a>";
-							echo $row['name']. "<br>";
+							echo $row['name'];
+							echo "<a href='../".$path."'>Download</a><br>";
 						}
 					echo "<a href='musicplay.php?cmd=play&sea=$sea&cat=$cat&folder=$fold'>Play all</a>";
 					}

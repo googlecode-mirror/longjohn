@@ -18,6 +18,6 @@ header("Content-Disposition: attachment; filename=playlist.m3u");
 #EXTM3U
 <?php while($row = @mysql_fetch_array($result2)) { ?>
 
-http://server<?php echo htmlspecialchars_decode($row['path'],ENT_QUOTES); ?><?php echo " \r\n"?>
+http://199.101.226.108:1776/<?php echo htmlspecialchars_decode($row['path'],ENT_QUOTES); ?><?php echo " \r\n"?>
 <?php }?>
 

@@ -28,6 +28,7 @@
 		<body>
 		<!-- start header -->
 		<div id="header">
+	
 			<div id="logo">
 				<h1><a href="#">Long John<sup></sup></a></h1>
 				<h2>web media server</h2>
