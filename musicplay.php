@@ -7,6 +7,8 @@ $database=movies;
 		      WHERE music.name LIKE '%".$_GET['sea']."%'
 			  AND music.category LIKE '%".$_GET['cat']."%' 
 			  AND music.artist LIKE '%".$_GET['folder']."%'
+			  AND music.artist LIKE '%".$_GET['folder']."%'
+			  AND music.mark ='".$_GET['mark']."' 
 				AND music.id LIKE '%".$_GET['id']."%'
 			  order by music.artist, music.name";
 
