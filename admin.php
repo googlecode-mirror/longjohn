@@ -10,6 +10,7 @@
 					<li><a href=movieList.php>edit movies</a></li>
 					<li><a href=movieReIndex.php>add movies</a></li>
 					<li><a href=addmusic.php>add music</a></li>
+					<li><a href=kindleadd.php>add books</a></li>					
 					<li><a href=cleanmusic.php>clean music</a></li>
 					<li><a href=addpics.php>add pictures</a></li>
 					<li><a href=create_thumbs.php>create thumbs</a></li>
