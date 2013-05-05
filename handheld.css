@@ -1,6 +1,5 @@
 /*
-Design by Free CSS Templates
-http://www.freecsstemplates.org
+
 Released for free under a Creative Commons Attribution 2.5 License
 */
 
@@ -9,8 +8,8 @@ body {
 	padding: 0;
 	background: #000000;
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-	font-size: 24px;
 	color: #555555;
+	font-size: 25px;
 }
 
 h1, h2, h3 {
@@ -25,12 +24,13 @@ h1 {
 }
 
 h2 {
-	font-size: 15px;
+	font-size: 12px;
 }
 
 ul {
 	margin:3px 0;
 	padding:3px 0;
+	font-size: 0px;
 }
 
 a:link {
@@ -48,6 +48,7 @@ a:visited {
 
 img {
 	border: none;
+	
 }
 
 img.left {
@@ -60,13 +61,16 @@ img.right {
 	margin-left: 5px;
 }
 
-
+img.resize{
+    width:100px; /* you can use % */
+    height: auto;
+}
 
 /* Header */
 
 #header{
 	width: 100%;
-	height: 50px;
+	height: 35px;
 	margin: 0 0 0 0;
 	
 }
@@ -84,7 +88,11 @@ img.right {
 #menu ul {
 	margin: 0;
 	list-style: none;
+	font-size: 17px;
+	
+	
 }
+
 
 #menu li {
 	display: inline;
@@ -95,27 +103,30 @@ img.right {
 	float: left;
 	background: #111111;
 	margin-left: 0px;
-	padding: 7px 20px;
+	padding: 7px 10px;
 	text-decoration: none;
-	font-size: 13px;
+	
 	color: #999999;
 }
 
 #menu a:hover {
-	border-top: 5px solid #999999;
-	border-bottom: 3px solid #999999;
+	border-top: 1px solid #999999;
+	border-bottom: 1px solid #999999;
 	text-decoration: none;
 }
 
 #menu .active a {
 	border-top: 5px solid #999999;
 	border-bottom: 3px solid #999999;
+	
+
 
 /* Page */
 
 #page {
 	width: 100%;
 	margin: 0 auto;
+	
 }
 
 /* Content */
@@ -125,10 +136,36 @@ img.right {
 	width: 100%;
 }
 
+
+/* Sidebar */
+
+#sidebar {
+	float: left;
+	width: 100%;
+	
+	
+}
+
+#sidebar ul {
+
+}
+
+#sidebar li{
+	
+	
+}
+
+
+#sidebar h2 {
+	margin-bottom: 0px;
+	border-bottom: 1px dotted #999999;
+	
+}
+
 /* Post */
 
 .post {
-	font-size: 24px;
+	font-size: 35px;
 
 }
 
@@ -140,36 +177,13 @@ img.right {
 }
 
 .post .entry {
-	font-size: 18px;
+	font-size: 12px;
 }
 
 
-.resize {
-width: 100%;
-height : auto;
-}
-
-/* Sidebar */
-
-#sidebar {
-	float: left;
-	width: 100%;
-}
-
-#sidebar ul {
-
-}
-
-#sidebar li{
-	text-indent:none;
-}
 
 
-#sidebar h2 {
-	margin-bottom: 0px;
-	border-bottom: 1px dotted #999999;
-	font-size: 16px;
-}
+
 
 /* Footer */
 
