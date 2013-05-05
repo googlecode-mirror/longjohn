@@ -54,8 +54,15 @@ echo "<tr>";
 	    echo "<td align=center>";
 		echo "<a href='divx.php?play=$movName' title=$movName>";
 		echo "<img src='pics/$movName.jpg' class='resize'>"; 
+		
+		$movName=preg_replace('/(?!^)[[:upper:]]/',' \0',$movName);
+		?>
+		 
+		<!--<a href="#" onmouseout="pop.close()" onmouseover="pop=window.open('popper.php?title=<?php  echo $movName?>','popper','width=385,height=655')">hover</font></a>-->
+		<a href="JavaScript:newPopup('popper.php?title=<?php  echo $movName?>');">more</a>
+		<?php
 		echo "<br>";
-		echo substr($movName,0,15);
+		//echo substr($movName,0,15);
 		echo "</a>";
 		echo "</td>";
 		
@@ -66,6 +73,14 @@ echo "</tr>";
 echo "</table>";
 }
 ?>
+<script type="text/javascript">
+// Popup window code
+function newPopup(url) {
+	popupWindow = window.open(
+		url,'popUpWindow','height=300,width=385,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+}
+</script>
+
 <?require_once "footer.php";?>
 
 
